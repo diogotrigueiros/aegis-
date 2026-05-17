@@ -21,7 +21,7 @@ class SimulationLogger:
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
         df = pd.DataFrame(self.records)
         df.to_csv(self.output_path, index=False)
-        print(f"Dataset exportado para {self.output_path}")
+        print(f"Dataset exported to {self.output_path}")
 
 
 if __name__ == "__main__":

@@ -9,20 +9,20 @@ def mutate(layout):
     return layout
 
 def optimize_city():
-    populacao = [
+    population = [
         [random.randint(0, 10) for _ in range(5)]
         for _ in range(10)
     ]
 
     for _ in range(20):
-        populacao.sort(key=fitness, reverse=True)
+        population.sort(key=fitness, reverse=True)
 
-        best = populacao[:5]
+        best = population[:5]
 
         while len(best) < 10:
             child = mutate(best[0][:])
             best.append(child)
 
-        populacao = best
+        population = best
 
-    return populacao[0]
+    return population[0]
