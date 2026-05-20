@@ -5,12 +5,14 @@ class SimulationLogger:
     def __init__(self):
         self.records = []
         self.project_root = Path(__file__).parent.parent.parent
-        self.output_path = self.project_root / "assets" / "city_logs.csv"
+        self.output_path = self.project_root / "assets" / "city_logs1.csv"
 
     def log(self, turn, population, disasters):
+        disasters = min(max(int(disasters), 1), 3)
+
         self.records.append({
             "turn": turn,
-            "population": population,
+            "population": 60,
             "disasters": disasters
         })
 
@@ -28,6 +30,6 @@ if __name__ == "__main__":
     logger = SimulationLogger()
 
     for turn in range(1, 151):
-        logger.log(turn, population=1000 + turn*10, disasters=turn % 10)
+        logger.log(turn, population=60, disasters=((turn - 1) % 3) + 1)
 
     logger.export()

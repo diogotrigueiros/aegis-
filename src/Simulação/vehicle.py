@@ -1,4 +1,4 @@
-from ai.astar import astar
+from AI.astar import astar
 
 class FireTruck:
     def __init__(self, x, y):

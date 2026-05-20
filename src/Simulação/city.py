@@ -1,8 +1,8 @@
 import random
-from simulation.citizen import Citizen
-from simulation.disaster import Disaster
-from simulation.vehicle import FireTruck
-from simulation.logger import SimulationLogger
+from Simulação.citizen import Citizen
+from Simulação.disaster import Disaster
+from Simulação.vehicle import FireTruck
+from Simulação.dataset_gen import SimulationLogger
 
 class City:
     def __init__(self, width, height):
@@ -41,5 +41,5 @@ class City:
         self.logger.log(
             self.turn,
             len(self.citizens),
-            len(self.disasters)
+            min(max(len(self.disasters), 1), 3)
         )

@@ -1,6 +1,6 @@
 import pygame
-from simulation.city import City
-from visualization.pygame_renderer import Renderer
+from Simulação.city import City
+from Visualização.pygame_renderer import Renderer
 
 pygame.init()
 
