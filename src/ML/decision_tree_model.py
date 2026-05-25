@@ -1,6 +1,8 @@
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 
+# Cria e treina um classificador de árvore de decisão com dados de exemplo.
+# A função devolve o modelo treinado para inferência posterior.
 def train_decision_tree():
     data = pd.DataFrame({
         "tax": [1,2,3,4,5,6],

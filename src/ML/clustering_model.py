@@ -1,6 +1,8 @@
 import numpy as np
 from sklearn.cluster import KMeans
 
+# Executa a clusterização K-means em dados de exemplo.
+# Agrupa observações em 2 clusters e devolve as etiquetas atribuídas.
 def run_clustering():
     data = np.array([
         [10, 20],
