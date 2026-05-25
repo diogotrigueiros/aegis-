@@ -1,12 +1,15 @@
 import pandas as pd
 from pathlib import Path
 
+# Classe que regista os dados da simulação e exporta-os para CSV.
 class SimulationLogger:
     def __init__(self):
         self.records = []
         self.project_root = Path(__file__).parent.parent.parent
         self.output_path = self.project_root / "assets" / "city_logs1.csv"
 
+    # Adiciona uma entrada de registo para o turno atual.
+    # Normaliza o número de desastres para um valor entre 1 e 3.
     def log(self, turn, population, disasters):
         disasters = min(max(int(disasters), 1), 3)
 
@@ -19,6 +22,7 @@ class SimulationLogger:
         if turn % 50 == 0:
             self.export()
 
+    # Exporta todos os registos acumulados para um ficheiro CSV.
     def export(self):
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
         df = pd.DataFrame(self.records)

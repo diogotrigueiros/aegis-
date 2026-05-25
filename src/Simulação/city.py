@@ -4,11 +4,13 @@ from Simulação.disaster import Disaster
 from Simulação.vehicle import FireTruck
 from Simulação.dataset_gen import SimulationLogger
 
+# Classe que representa a cidade e controla a simulação.
 class City:
     def __init__(self, width, height):
         self.width = width
         self.height = height
 
+        # Inicializa a população de cidadãos em posições aleatórias.
         self.citizens = [
             Citizen(random.randint(0, width-1),
                     random.randint(0, height-1))
@@ -21,6 +23,8 @@ class City:
         self.turn = 0
         self.logger = SimulationLogger()
 
+    # Executa um passo de atualização da simulação.
+    # Move cidadãos, possivelmente cria desastres e atualiza veículos de emergência.
     def update(self):
         self.turn += 1
 
