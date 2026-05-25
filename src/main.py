@@ -7,7 +7,7 @@ pygame.init()
 
 WIDTH, HEIGHT = 1000, 800
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Aegis City - Final Version")
+pygame.display.set_caption("Aegis City")
 
 # Relógio para controlar a taxa de atualização da simulação.
 clock = pygame.time.Clock()
